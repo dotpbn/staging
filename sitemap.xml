@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="https://www.limecommerce.com/default.xsl"?>
+<urlset
+	xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
+	xmlns:image="https://www.google.com/schemas/sitemap-image/1.1"
+>
+	<url>
+		<loc><![CDATA[https://dotpbn.github.io/staging/]]></loc>
+		<lastmod><![CDATA[2021-01-05T03:02:05+00:00]]></lastmod>
+		<changefreq><![CDATA[always]]></changefreq>
+		<priority><![CDATA[0.7]]></priority>
+		<image:image>
+			<image:loc><![CDATA[https://i0.wp.com/limecommerce.com/wp-content/uploads/2019/06/Group-39.png]]></image:loc>
+			<image:caption><![CDATA[Magento Development Services]]></image:caption>
+			<image:title><![CDATA[Magento Development Services]]></image:title>
+		</image:image>
+	</url>
+</urlset>
