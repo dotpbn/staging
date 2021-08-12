@@ -1,0 +1,9 @@
+(function($){$(window).on('load',function(){if(typeof verticalCenterElements=='undefined'){return}
+$.each(verticalCenterElements,function(){$.each(this,function(){var $selector,offset;try{$selector=$(this.selector)}catch(e){return!0}
+offset=this.offset;$selector.initVerticalCenter(offset)})})})})(jQuery);(function($){var debounce=function(func,threshold){var timeout;return function debounced(){var obj=this;var args=arguments;function delayed(){func.apply(obj,args);timeout=null}
+if(timeout){clearTimeout(timeout)}
+timeout=setTimeout(delayed,threshold||50)}};$.fn.initVerticalCenter=function(offset){var selector,eventData,ourEvents,eventSet,thisEvent,eventName;selector=this.selector;offset=offset||0;if(window.verticalCenterItems){window.verticalCenterItems[selector]=offset}else{window.verticalCenterItems={};window.verticalCenterItems[selector]=offset}
+eventData=$._data(window,'events')||{};ourEvents=['resize','orientationchange','verticalcenter'];$(ourEvents).each(function(){eventSet=!1;thisEvent=this;eventName=this+'.verticalcenter';if(eventData[thisEvent]){$(eventData[thisEvent]).each(function(){if(this.namespace=='verticalcenter'){eventSet=!0}})}
+if(!eventSet){$(window).on(eventName,debounce(triggerVerticalCenter))}});triggerVerticalCenter();return this};function triggerVerticalCenter(){$.each(window.verticalCenterItems,function(selector,offset){$(selector).doVerticalCenter(offset)})}
+$.fn.doVerticalCenter=function(offset){var offset=offset||0;$(this).each(function(){var parentHeight=$(this).parent().height();if($(this).css('display')==='inline'){$(this).css('display','inline-block')}
+$(this).css('margin-top',(((parentHeight-$(this).outerHeight())/2)+parseInt(offset))).addClass('vc-complete')})}})(jQuery)

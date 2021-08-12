@@ -1,0 +1,2 @@
+jQuery(document).ready(function($){if(window.screen){$wsize=screen.width}else{$wsize=0}
+jQuery.ajax({url:ajaxurl,data:{'action':'stopbadbots_grava_fingerprint','fingerprint':$wsize},success:function(data){},error:function(errorThrown){}})})
